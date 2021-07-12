@@ -34,11 +34,11 @@
 // in the compilation of the library).
 class Adafruit_MQTT_FONA : public Adafruit_MQTT {
 public:
-  Adafruit_MQTT_FONA(Adafruit_FONA *f, const char *server, uint16_t port,
+  Adafruit_MQTT_FONA(Adafruit_FONA_3G *f, const char *server, uint16_t port,
                      const char *cid, const char *user, const char *pass)
       : Adafruit_MQTT(server, port, cid, user, pass), fona(f) {}
 
-  Adafruit_MQTT_FONA(Adafruit_FONA *f, const char *server, uint16_t port,
+  Adafruit_MQTT_FONA(Adafruit_FONA_3G *f, const char *server, uint16_t port,
                      const char *user = "", const char *pass = "")
       : Adafruit_MQTT(server, port, user, pass), fona(f) {}
 
@@ -134,7 +134,7 @@ protected:
 
 private:
   uint32_t serverip;
-  Adafruit_FONA *fona;
+  Adafruit_FONA_3G *fona;
 };
 
 #endif
